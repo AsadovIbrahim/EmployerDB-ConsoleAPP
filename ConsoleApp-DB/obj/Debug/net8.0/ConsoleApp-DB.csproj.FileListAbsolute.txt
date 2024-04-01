@@ -128,3 +128,4 @@ C:\Users\ASUS\source\repos\ConsoleApp-DB\ConsoleApp-DB\obj\Debug\net8.0\refint\C
 C:\Users\ASUS\source\repos\ConsoleApp-DB\ConsoleApp-DB\obj\Debug\net8.0\ConsoleApp-DB.pdb
 C:\Users\ASUS\source\repos\ConsoleApp-DB\ConsoleApp-DB\obj\Debug\net8.0\ConsoleApp-DB.genruntimeconfig.cache
 C:\Users\ASUS\source\repos\ConsoleApp-DB\ConsoleApp-DB\obj\Debug\net8.0\ref\ConsoleApp-DB.dll
+C:\Users\ASUS\source\repos\ConsoleApp-DB\ConsoleApp-DB\obj\Debug\net8.0\ConsoleApp-DB.sourcelink.json

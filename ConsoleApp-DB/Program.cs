@@ -47,6 +47,7 @@ public class Program
                 SetConsoleColor("->REMOVE EMPLOYEES<-");
 
             }
+
             else
             {
                 Console.SetCursorPosition(50, 12);
@@ -56,23 +57,37 @@ public class Program
             if (choose == 3)
             {
                 Console.SetCursorPosition(50, 13);
+                SetConsoleColor("->UPDATE EMPLOYEES<-");
+
+            }
+
+            else
+            {
+                Console.SetCursorPosition(50, 13);
+                Console.WriteLine("UPDATE EMPLOYEES");
+            }
+
+
+            if (choose == 4)
+            {
+                Console.SetCursorPosition(50, 14);
                 SetConsoleColor("->CLEAR ALL EMPLOYEES<-");
 
             }
             else
             {
-                Console.SetCursorPosition(50, 13);
+                Console.SetCursorPosition(50, 14);
                 Console.WriteLine("CLEAR ALL EMPLOYEES");
             }
 
-            if (choose == 4)
+            if (choose == 5)
             {
-                Console.SetCursorPosition(50, 14);
+                Console.SetCursorPosition(50, 15);
                 SetConsoleColor("->EXIT<-");
             }
             else
             {
-                Console.SetCursorPosition(50, 14);
+                Console.SetCursorPosition(50, 15);
                 Console.WriteLine("EXIT");
             }
 
@@ -82,10 +97,10 @@ public class Program
             {
                 case ConsoleKey.UpArrow:
                     if (choose != 0) choose--;
-                    else choose = 4;
+                    else choose = 5;
                     break;
                 case ConsoleKey.DownArrow:
-                    if (choose != 4) choose++;
+                    if (choose != 5) choose++;
                     else choose = 0;
                     break;
                 case ConsoleKey.Enter:
@@ -148,7 +163,36 @@ public class Program
                         Console.ForegroundColor = ConsoleColor.White;
                         PressAnyKey();
                     }
+
                     else if (choose == 3)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Department department = new Department();
+                        Console.Write("Enter Id Employer To Update:");
+                        Console.WriteLine("\n------------");
+                        int id = Convert.ToInt32(Console.ReadLine());
+                        Employer updatedEmployer = new Employer();
+                        Console.WriteLine("Enter Name: ");
+                        updatedEmployer.Name = Console.ReadLine();
+                        Console.WriteLine("----------");
+                        Console.WriteLine("Enter Surname: ");
+                        updatedEmployer.Surname = Console.ReadLine();
+                        Console.WriteLine("----------");
+                        Console.WriteLine("Enter Age: ");
+                        updatedEmployer.Age = Convert.ToByte(Console.ReadLine());
+                        Console.WriteLine("----------");
+                        Console.WriteLine("Enter Department Number: ");
+                        updatedEmployer.DepartmentNo = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("----------");
+                        Console.WriteLine("Enter Salary:");
+                        updatedEmployer.Salary = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("----------");
+                        department.UpdateEmploye(id, updatedEmployer);
+                        PressAnyKey();
+
+                    }
+
+                    else if (choose == 4)
                     {
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Department department = new Department();
@@ -157,7 +201,7 @@ public class Program
                         PressAnyKey();
                     }
 
-                    else if (choose == 4)
+                    else if (choose == 5)
                     {
                         status = false;
                     }

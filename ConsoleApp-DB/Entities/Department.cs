@@ -22,7 +22,7 @@ namespace ConsoleApp_DB.Entities
         }
         public void ShowAllInfo()
         {
-            foreach (var item in Context.Employers)
+            foreach (var item in Context.Employers!)
             {
                 Console.WriteLine(item);
                 Console.WriteLine("------------");
@@ -56,6 +56,24 @@ namespace ConsoleApp_DB.Entities
             Context.SaveChanges();
 
         }
+        public void UpdateEmploye(int id,Employer updatedEmployer)
+        {
+            var employertoUpdate=Context.Employers!.FirstOrDefault(e=>e.Id == id);
+            if (employertoUpdate != null)
+            {
+                employertoUpdate.Name = updatedEmployer.Name;
+                employertoUpdate.Surname=updatedEmployer.Surname;
+                employertoUpdate.Age = updatedEmployer.Age;
+                employertoUpdate.DepartmentNo=updatedEmployer.DepartmentNo;
+
+                Console.WriteLine($"Employer with ID :{id} succesfully updated!!");
+            }
+            else
+            {
+                Console.WriteLine("NOTHING TO UPDATE");
+            }
+            Context.SaveChanges();
+        } 
     }
 }
 

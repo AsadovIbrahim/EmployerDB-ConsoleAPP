@@ -14,6 +14,7 @@ namespace ConsoleApp_DB.Entities
         public int DepartmentNo { get; set; }
         public double Salary { get; set; }
 
+        public Employer() { }
         public Employer(string name, string surname, byte age, int departmentNo, double salary)
         {
             Name = name;
